@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Radio.View.FrequencyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Radio.View"
+             mc:Ignorable="d" 
+             Height="240" Width="870">
+    
+    <Grid Height="220">
+        <!--animation bound red line-->
+        <Line X1 ="0" X2="0" Y1="0" Y2="150" StrokeThickness="10" Stroke="Red" Margin="34,13,826,55" IsHitTestVisible="False">
+            <Line.RenderTransform>
+                <TranslateTransform X="{Binding AnimationAmount, ElementName=FrequencyDial}"/>
+            </Line.RenderTransform>
+        </Line>
+        
+        <!--text inside border-->
+        <Border BorderBrush="Beige" BorderThickness="10" Margin="10,10,250,10" IsHitTestVisible="False">
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="100">
+                <Run Text="{Binding Value, ElementName=FrequencyDial, StringFormat=N2}"/>
+                <Run Text="MHz"/>
+            </TextBlock>
+        </Border>
+        <Line X1 ="0" X2="560" Y1="0" Y2="0" StrokeThickness="8" Stroke="Black" IsHitTestVisible="False" Margin="29,180,264,0"/>
+        <Line X1 ="0" X2="0" Y1="30" Y2="0" StrokeThickness="8" Stroke="Black" IsHitTestVisible="False" Margin="593,154,219,25" />
+        <Line X1 ="0" X2="0" Y1="30" Y2="0" StrokeThickness="8" Stroke="Black" IsHitTestVisible="False" Margin="405,154,423,25" />
+        <Line X1 ="0" X2="0" Y1="30" Y2="0" StrokeThickness="8" Stroke="Black" IsHitTestVisible="False" Margin="219,154,618,36" />
+        <Line X1 ="0" X2="0" Y1="30" Y2="0" StrokeThickness="8" Stroke="Black" IsHitTestVisible="False" Margin="33,154,815,36" />
+        <TextBlock HorizontalAlignment="Left" Margin="18,183,0,0" TextWrapping="Wrap" FontSize="20"  Text="{Binding MinValue, ElementName=FrequencyDial}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="575,184,0,0" TextWrapping="Wrap" FontSize="20" Text="{Binding MaxValue, ElementName=FrequencyDial}" VerticalAlignment="Top"/>
+
+        <view:DialView x:Name="FrequencyDial"
+                   MinValue="87.5"
+                   MaxValue="108"
+                   MinAnimationAmount="0" 
+                   MaxAnimationAmount="560" 
+                   MinAngle="-720" 
+                   MaxAngle="720" 
+                   Margin="645,10,25,10" 
+                   IsHitTestVisible="True"
+                   Value="{Binding Frequency,Mode=TwoWay}"/>
+    </Grid>
+</UserControl>
