@@ -9,3 +9,5 @@ Für einen Einblick ist der Entrypoint in der Datei ***App.xaml.cs*** zu finden,
 sind.
 
 Die Anwendung kann außerdem unter bin/Radio.exe ausgeführt oder selbst kompiliert werden.
+
+Ich wünsche viel Spaß mit meiner Lösung und würde mich über Feedback freuen.
