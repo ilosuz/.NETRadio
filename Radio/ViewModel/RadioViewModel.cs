@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Radio.ViewModel
 {
-    class RadioViewModel : INotifyPropertyChanged
+    public class RadioViewModel : INotifyPropertyChanged
     {
         /// <summary>
         /// RadioModel used by RadioViewModel to save data

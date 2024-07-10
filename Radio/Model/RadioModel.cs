@@ -1,6 +1,6 @@
 ﻿namespace Radio.Model
 {
-    class RadioModel
+    public class RadioModel
     {
         #region // Constructors
         public RadioModel() { }

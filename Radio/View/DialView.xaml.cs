@@ -19,19 +19,11 @@ namespace Radio.View
         private Vector PreviousCursorPoint = default;
 
         // Angle for Dial Animation
-        private double m_MaxAngle = default;
-        private double m_MinAngle = default;
         private double m_Angle = default;
         private readonly double m_MaxRotationAnglePerEvent = 10;
 
         // Amount for Animation driven by Dial
-        private double m_MaxAnimationAmount = default;
-        private double m_MinAnimationAmount = default;
         private double m_AnimationAmount = default;
-
-        // Dial Value
-        private double m_MaxValue = default;
-        private double m_MinValue = default;
         #endregion
 
         #region // Properties
@@ -51,17 +43,9 @@ namespace Radio.View
             get => m_AnimationAmount;
             set => SetProperty(ref m_AnimationAmount, value);
         }
-        public double MaxAnimationAmount
-        {
-            get => m_MaxAnimationAmount;
-            set => m_MaxAnimationAmount = value;
-        }
+        public double MaxAnimationAmount{ get; set; }
 
-        public double MinAnimationAmount
-        {
-            get => m_MinAnimationAmount;
-            set => m_MinAnimationAmount = value;
-        }
+        public double MinAnimationAmount{ get; set; }
 
         /// <summary>
         /// Angle uses INotifyPropertyChanged to visibly turn the dial
@@ -72,17 +56,9 @@ namespace Radio.View
             set => SetProperty(ref m_Angle, value);
         }
 
-        public double MaxAngle
-        {
-            get => m_MaxAngle;
-            set => m_MaxAngle = value;
-        }
+        public double MaxAngle { get; set; }
 
-        public double MinAngle
-        {
-            get => m_MinAngle;
-            set => m_MinAngle = value;
-        }
+        public double MinAngle { get; set; }
         /// <summary>
         /// Value binds to the different RadioViewModel Properties
         /// </summary>
@@ -92,17 +68,9 @@ namespace Radio.View
             set => SetValue(ValueProperty, value);
         }
 
-        public double MaxValue
-        {
-            get => m_MaxValue;
-            set => m_MaxValue = value;
-        }
+        public double MaxValue { get; set; }
 
-        public double MinValue
-        {
-            get => m_MinValue;
-            set => m_MinValue = value;
-        }
+        public double MinValue { get; set; }
         #endregion
 
         #region // Eventhandler
